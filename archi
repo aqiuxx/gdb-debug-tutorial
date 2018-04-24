@@ -1,0 +1,21 @@
+#!/bin/bash
+# Archive input file to a predetermined location
+
+# Check exactly 1 argument
+if [ $# -ne 1 ]
+then 
+    echo "Usage: $0 FILE"
+    exit 1
+fi
+
+# the archive file location 
+DATE=`date +%Y-%m-%d`
+ARCHIVE=~/Documents/embedded/backup/$DATE 
+
+# Make the archive (if not exist)
+mkdir -p $ARCHIVER
+
+#
+rsync -avr $1 $ARCHIVE
+
+exit 0

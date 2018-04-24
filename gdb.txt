@@ -1,0 +1,128 @@
+Breakpoint 1 at 0x100000e55: file gdb.c, line 10.
+1	#include <stdio.h>
+2	#include <string.h>
+3	
+4	int mult(int big, int tmp);
+5	int main()
+6	{
+7	    int sum, i;
+8	    char string[120];
+9	
+10	    sum = 0;
+Starting program: /Users/aqiu/Documents/work/gdb-debug-tutorial/a.out 
+During startup program exited with code 127.
+1	#include <stdio.h>
+2	#include <string.h>
+3	
+4	int mult(int big, int tmp);
+5	int main()
+6	{
+7	    int sum, i;
+8	    char string[120];
+9	
+10	    sum = 0;
+Breakpoint 1 at 0x100000e55: file gdb.c, line 10.
+Temporary breakpoint 2 at 0x100000e55: file gdb.c, line 10.
+Starting program: /Users/aqiu/Documents/work/gdb-debug-tutorial/a.out 
+During startup program exited with code 127.
+  File "<string>", line 1
+    import
+         ^
+SyntaxError: invalid syntax
+Error while executing Python code.
+  File "<string>", line 2
+    print(' i am %d' os.getpid())
+                      ^
+SyntaxError: invalid syntax
+Error while executing Python code.
+No symbol " i am %d" in current context.
+This command cannot be used at the top level.
+Undefined command: "import".  Try "help".
+ i am 30947
+Breakpoint 1 at 0x100000e55: file gdb.c, line 10.
+Temporary breakpoint 2 at 0x100000e55: file gdb.c, line 10.
+Starting program: /Users/aqiu/Documents/work/gdb-debug-tutorial/a.out 
+During startup program exited with code 127.
+Breakpoint 1 at 0x100000e55: file gdb.c, line 10.
+Temporary breakpoint 2 at 0x100000e55: file gdb.c, line 10.
+Starting program: /Users/aqiu/Documents/work/gdb-debug-tutorial/a.out 
+During startup program exited with code 127.
+Temporary breakpoint 3 at 0x100000e55: file gdb.c, line 10.
+Starting program: /Users/aqiu/Documents/work/gdb-debug-tutorial/a.out 
+During startup program exited with code 127.
+Temporary breakpoint 1 at 0x100000e55: file gdb.c, line 10.
+Starting program: /Users/aqiu/Documents/work/gdb-debug-tutorial/a.out 
+During startup program exited with code 127.
+Temporary breakpoint 1 at 0x100000e55: file gdb.c, line 10.
+Starting program: /Users/aqiu/Documents/work/gdb-debug-tutorial/a.out 
+During startup program exited with code 127.
+quit
+Temporary breakpoint 1 at 0x100000e55: file gdb.c, line 10.
+Starting program: /Users/aqiu/Documents/work/gdb-debug-tutorial/a.out 
+During startup program exited with code 127.
+quit
+Temporary breakpoint 1 at 0x100000e55: file gdb.c, line 10.
+Starting program: /Users/aqiu/Documents/work/gdb-debug-tutorial/a.out 
+During startup program exited with code 127.
+Temporary breakpoint 1 at 0x100000e55: file gdb.c, line 10.
+Starting program: /Users/aqiu/Documents/work/gdb-debug-tutorial/a.out 
+warning: `/BinaryCache/coreTLS/coreTLS-35.40.1~1/Objects/coretls.build/coretls.build/Objects-normal/x86_64/system_coretls_vers.o': can't open to read symbols: No such file or directory.
+warning: Could not open OSO archive file "/BinaryCache/coreTLS/coreTLS-35.40.1~1/Symbols/BuiltProducts/libcoretls_ciphersuites.a"
+warning: Could not open OSO archive file "/BinaryCache/coreTLS/coreTLS-35.40.1~1/Symbols/BuiltProducts/libcoretls_handshake.a"
+warning: Could not open OSO archive file "/BinaryCache/coreTLS/coreTLS-35.40.1~1/Symbols/BuiltProducts/libcoretls_record.a"
+warning: Could not open OSO archive file "/BinaryCache/coreTLS/coreTLS-35.40.1~1/Symbols/BuiltProducts/libcoretls_stream_parser.a"
+
+Temporary breakpoint 1, main () at gdb.c:10
+10	    sum = 0;
+5	int main()
+6	{
+7	    int sum, i;
+8	    char string[120];
+9	
+10	    sum = 0;
+11	    strcpy(string, "Hello!");
+12	
+13	    for (i=1; i<=10; i++)
+14	    {
+Continuing.
+[Inferior 1 (process 653) exited normally]
+1	#include <stdio.h>
+2	#include <string.h>
+3	
+4	int mult(int big, int tmp);
+5	int main()
+6	{
+7	    int sum, i;
+8	    char string[120];
+9	
+10	    sum = 0;
+5	int main()
+6	{
+7	    int sum, i;
+8	    char string[120];
+9	
+10	    sum = 0;
+11	    strcpy(string, "Hello!");
+12	
+13	    for (i=1; i<=10; i++)
+14	    {
+15	        sum += i;
+16	        sum = mult(sum, i);
+17	    }
+18	
+19	    printf("sum = %d\n", sum);
+20	
+21	    return 0;
+22	}
+23	
+24	int mult(int big, int tmp)
+25	{
+26	    int i;
+27	
+28	    i = big;
+29	    if (big > 10) 
+30	        i = i%10;
+31	
+32	    return (i*tmp);
+33	}
+quit
